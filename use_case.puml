@@ -17,18 +17,8 @@ actor Admin as root
 
 usr -- signin
 usr -- signup
-usr -- trx
-usr -- up_trx_receipt
-usr -- trx_history
-usr -- pdf_trx
-usr -- mng_cart
-usr -- mng_profile
-usr -- signout
 
-signin -- root
-stock -- root
-trx_history -- root
-pdf_trx -- root
+root -- signin
 
 signin ..> trx: <<extend>>
 signin ..> up_trx_receipt: <<extend>>
