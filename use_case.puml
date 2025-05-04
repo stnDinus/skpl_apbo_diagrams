@@ -9,7 +9,7 @@ actor Admin as root
 (Keluar) as signout
 (Lakukan transaksi) as trx
 (Unggah bukti transaksi) as up_trx_receipt
-(Melihat riwayat transaksi) as trx_history
+(Lihat riwayat transaksi) as trx_history
 (Cetak riwayat transaksi ke pdf) as pdf_trx_history
 (Kelola keranjang) as mng_cart
 (Kelola profil) as mng_profile
