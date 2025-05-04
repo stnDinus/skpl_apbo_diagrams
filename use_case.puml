@@ -7,10 +7,10 @@ actor Admin as root
 (Login) as signin
 (Registrasi) as signup
 (Keluar) as signout
-(Membuat transaksi) as trx
+(Buat transaksi) as trx
 (Upload bukti transaksi) as up_trx_receipt
 (Melihat riwayat transaksi) as trx_history
-(Mencetak transaksi ke pdf) as pdf_trx
+(Cetak transaksi ke pdf) as pdf_trx
 (Kelola keranjang) as mng_cart
 (Kelola profil) as mng_profile
 (Kelola estalase) as stock
