@@ -1,8 +1,8 @@
 @startuml
 left to right direction
 
-actor Pembeli
-actor Admin
+actor Pembeli as usr
+actor Admin as root
 
 (Login) as signin
 (Registrasi) as signup
@@ -15,20 +15,20 @@ actor Admin
 (Kelola profil) as mng_profile
 (Kelola estalase) as stock
 
-Pembeli -- signin
-Pembeli -- signup
-Pembeli -- trx
-Pembeli -- up_trx_receipt
-Pembeli -- trx_history
-Pembeli -- pdf_trx
-Pembeli -- mng_cart
-Pembeli -- mng_profile
-Pembeli -- signout
+usr -- signin
+usr -- signup
+usr -- trx
+usr -- up_trx_receipt
+usr -- trx_history
+usr -- pdf_trx
+usr -- mng_cart
+usr -- mng_profile
+usr -- signout
 
-signin -- Admin
-stock -- Admin
-trx_history -- Admin
-pdf_trx -- Admin
+signin -- root
+stock -- root
+trx_history -- root
+pdf_trx -- root
 
 signin ..> trx: <<extend>>
 signin ..> up_trx_receipt: <<extend>>
