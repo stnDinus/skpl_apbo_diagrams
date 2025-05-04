@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+actor Pembeli
+actor Admin
+
+Pembeli -- (Login)
+Pembeli -- (Registrasi)
+Pembeli -- (Membuat transaksi)
+Pembeli -- (Upload bukti transaksi)
+Pembeli -- (Melihat riwayat transaksi)
+Pembeli -- (Mencetak transaksi ke pdf)
+Pembeli -- (Kelola keranjang)
+Pembeli -- (Kelola profil)
+Pembeli -- (Keluar)
+
+(Login) -- Admin
+(Kelola estalase) -- Admin
+(Melihat riwayat transaksi) -- Admin
+(Mencetak transaksi ke pdf) -- Admin
+
+(Login) ..> (Membuat transaksi): <<extend>>
+(Login) ..> (Upload bukti transaksi): <<extend>>
+(Login) ..> (Melihat riwayat transaksi): <<extend>>
+(Login) ..> (Mencetak transaksi ke pdf): <<extend>>
+(Login) ..> (Kelola keranjang): <<extend>>
+(Login) ..> (Kelola profil): <<extend>>
+(Login) ..> (Keluar): <<extend>>
+
+(Login) ..> (Kelola estalase): <<extend>>
+
+@enduml
