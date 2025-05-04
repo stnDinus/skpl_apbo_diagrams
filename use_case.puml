@@ -20,14 +20,14 @@ usr -- signup
 
 root -- signin
 
-signin ..> trx: <<extend>>
-signin ..> up_trx_receipt: <<extend>>
-signin ..> trx_history: <<extend>>
-signin ..> pdf_trx: <<extend>>
-signin ..> mng_cart: <<extend>>
-signin ..> mng_profile: <<extend>>
-signin ..> signout: <<extend>>
+signin <.. trx: <<extend>>
+signin <.. up_trx_receipt: <<extend>>
+signin <.. trx_history: <<extend>>
+signin <.. pdf_trx: <<extend>>
+signin <.. mng_cart: <<extend>>
+signin <.. mng_profile: <<extend>>
+signin <.. signout: <<extend>>
 
-signin ..> stock: <<extend>>
+signin <.. stock: <<extend>>
 
 @enduml
