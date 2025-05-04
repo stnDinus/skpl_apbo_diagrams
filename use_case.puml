@@ -4,11 +4,11 @@ left to right direction
 actor Pembeli as usr
 actor Admin as root
 
-(Login) as signin
+(Masuk) as signin
 (Registrasi) as signup
 (Keluar) as signout
-(Buat transaksi) as trx
-(Upload bukti transaksi) as up_trx_receipt
+(Lakukan transaksi) as trx
+(Unggah bukti transaksi) as up_trx_receipt
 (Melihat riwayat transaksi) as trx_history
 (Cetak riwayat transaksi ke pdf) as pdf_trx_history
 (Kelola keranjang) as mng_cart
