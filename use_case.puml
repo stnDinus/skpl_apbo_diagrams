@@ -4,29 +4,40 @@ left to right direction
 actor Pembeli
 actor Admin
 
-Pembeli -- (Login)
-Pembeli -- (Registrasi)
-Pembeli -- (Membuat transaksi)
-Pembeli -- (Upload bukti transaksi)
-Pembeli -- (Melihat riwayat transaksi)
-Pembeli -- (Mencetak transaksi ke pdf)
-Pembeli -- (Kelola keranjang)
-Pembeli -- (Kelola profil)
-Pembeli -- (Keluar)
+(Login) as signin
+(Registrasi) as signup
+(Keluar) as signout
+(Membuat transaksi) as trx
+(Upload bukti transaksi) as up_trx_receipt
+(Melihat riwayat transaksi) as trx_history
+(Mencetak transaksi ke pdf) as pdf_trx
+(Kelola keranjang) as mng_cart
+(Kelola profil) as mng_profile
+(Kelola estalase) as stock
 
-(Login) -- Admin
-(Kelola estalase) -- Admin
-(Melihat riwayat transaksi) -- Admin
-(Mencetak transaksi ke pdf) -- Admin
+Pembeli -- signin
+Pembeli -- signup
+Pembeli -- trx
+Pembeli -- up_trx_receipt
+Pembeli -- trx_history
+Pembeli -- pdf_trx
+Pembeli -- mng_cart
+Pembeli -- mng_profile
+Pembeli -- signout
 
-(Login) ..> (Membuat transaksi): <<extend>>
-(Login) ..> (Upload bukti transaksi): <<extend>>
-(Login) ..> (Melihat riwayat transaksi): <<extend>>
-(Login) ..> (Mencetak transaksi ke pdf): <<extend>>
-(Login) ..> (Kelola keranjang): <<extend>>
-(Login) ..> (Kelola profil): <<extend>>
-(Login) ..> (Keluar): <<extend>>
+signin -- Admin
+stock -- Admin
+trx_history -- Admin
+pdf_trx -- Admin
 
-(Login) ..> (Kelola estalase): <<extend>>
+signin ..> trx: <<extend>>
+signin ..> up_trx_receipt: <<extend>>
+signin ..> trx_history: <<extend>>
+signin ..> pdf_trx: <<extend>>
+signin ..> mng_cart: <<extend>>
+signin ..> mng_profile: <<extend>>
+signin ..> signout: <<extend>>
+
+signin ..> stock: <<extend>>
 
 @enduml
