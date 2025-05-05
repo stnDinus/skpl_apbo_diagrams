@@ -11,8 +11,8 @@ actor Admin as root
 (Unggah bukti transaksi) as up_trx_receipt
 (Lihat riwayat transaksi) as trx_history
 (Cetak riwayat transaksi ke pdf) as pdf_trx_history
-(Kelola keranjang) as mng_cart
-(Kelola profil) as mng_profile
+(Tambah barang ke keranjang) as add_cart
+(Hapus barang dari keranjang) as del_cart
 (Kelola estalase) as stock
 
 usr -- signin
@@ -23,7 +23,8 @@ root -- signin
 signin <.. trx: <<extend>>
 signin <.. trx_history: <<extend>>
 signin <.. pdf_trx_history: <<extend>>
-signin <.. mng_cart: <<extend>>
+signin <.. add_cart: <<extend>>
+signin <.. del_cart: <<extend>>
 signin <.. mng_profile: <<extend>>
 signin <.. signout: <<extend>>
 
