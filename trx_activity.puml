@@ -9,6 +9,7 @@ start
 
 |pembeli|
 :isi tujuan dan pilihan kurir;
+:pilih tombol "Bayar";
 
 |aplikasi|
 :kirim data transaksi ke firebase;
