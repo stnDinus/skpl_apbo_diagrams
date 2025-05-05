@@ -3,6 +3,11 @@
 |pembeli|
 start
 :pilih tombol "Checkout" pada halaman keranjang;
+
+|aplikasi|
+:alih ke halaman checkout;
+
+|pembeli|
 :isi tujuan dan pilihan kurir;
 
 |aplikasi|
