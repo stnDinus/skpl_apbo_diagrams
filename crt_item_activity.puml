@@ -9,7 +9,7 @@ start
 
 |admin|
 :isi rincian barang (nama, deskripsi, harga, etc);
-:pilih tombol simpan;
+:pilih tombol "Simpan";
 
 |aplikasi|
 :kirim data barang ke server;
