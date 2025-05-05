@@ -1,13 +1,15 @@
 @startuml
 actor Admin
 control ItemPage
+control EditItemPage
 control DashboardPage
 boundary Server
 
 Admin -> ItemPage: pilih tombol "edit"
-Admin -> ItemPage: isi data baru barang
-Admin -> ItemPage: pilih tombol simpan
-ItemPage -> Server: kirim data baru barang
-Server -> ItemPage: kirim hasil sukses/gagal
-ItemPage -> DashboardPage: alih
+ItemPage -> EditItemPage: alih
+Admin -> EditItemPage: isi data baru barang
+Admin -> EditItemPage: pilih tombol simpan
+EditItemPage -> Server: kirim data baru barang
+Server -> EditItemPage: kirim hasil sukses/gagal
+EditItemPage -> DashboardPage: alih
 @enduml
