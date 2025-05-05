@@ -1,0 +1,18 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol akun pada halaman "dashboard";
+:pilih tombol "Keluar";
+
+|aplikasi|
+:kirim permintaan keluar ke firebase;
+
+|firebase|
+:konfirmasikan permintaan keluar;
+
+|aplikasi|
+:kembali ke halaman awal;
+stop
+
+@enduml

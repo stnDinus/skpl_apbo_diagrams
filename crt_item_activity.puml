@@ -1,0 +1,26 @@
+@startuml
+
+|admin|
+start
+:pilih tombol "Tambah" pada halaman "dashboard";
+
+|aplikasi|
+:alih ke halaman tambah barang;
+
+|admin|
+:isi rincian barang (nama, deskripsi, harga, etc);
+:pilih tombol simpan;
+
+|aplikasi|
+:kirim data barang ke server;
+:tunggu respon dari server;
+
+|server|
+:simpan barang pada database;
+:kirim respon sukses/gagal ke aplikasi;
+
+|aplikasi|
+:jika berhasil, alihkan ke halaman "dashboard", jika tidak, tampilkan kegagalan;
+stop
+
+@enduml

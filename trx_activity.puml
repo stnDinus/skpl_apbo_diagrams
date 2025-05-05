@@ -1,0 +1,18 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol "Checkout" pada halaman keranjang;
+:isi tujuan dan pilihan kurir;
+
+|aplikasi|
+:kirim data transaksi ke firebase;
+
+|firebase|
+:simpan data transaksi;
+
+|aplikasi|
+:tampilkan nota transaksi;
+stop
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+
+|admin|
+start
+:pilih tombol "Transaksi" pada halaman "dashboard";
+
+|aplikasi|
+:alihkan ke halaman "transaksi";
+
+|admin|
+:pilih tombol "pdf";
+
+|aplikasi|
+:simpan transaksi sebagai format pdf pada perangkat;
+:tampilkan lokasi penyimpanan pdf;
+
+stop
+
+@enduml

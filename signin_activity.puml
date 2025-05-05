@@ -1,0 +1,20 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol "Masuk" pada halaman awal;
+:isi email dan password;
+:pilih tombol "Login";
+
+|aplikasi|
+:kirim data login ke firebase;
+
+|firebase|
+:proses data login;
+:kirim hasil login (gagal/sukses) ke aplikasi;
+
+|aplikasi|
+:alih ke halaman "dashboard" jika berhasil, tampilkan kegagalan jika tidak;
+stop
+
+@enduml

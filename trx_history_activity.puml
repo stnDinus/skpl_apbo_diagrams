@@ -1,0 +1,18 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol "Riwayat" pada halaman "dashboard";
+
+|aplikasi|
+:alih ke halaman riwayat;
+:ambil data riwayat transaksi pengguna dari firebase;
+
+|firebase|
+:kirim data riwayat ke aplikasi;
+
+|aplikasi|
+:tampilkan data riwayat;
+stop
+
+@enduml

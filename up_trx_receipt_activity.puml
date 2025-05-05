@@ -1,0 +1,18 @@
+@startuml
+
+|pengguna|
+start
+:pilih "Transaksi saya belum terkirim" pada halaman bantuan;
+:unggah bukti transaksi dengan memilih tombol "Upload";
+
+|aplikasi|
+:unggah bukti transaksi ke firebase;
+
+|firebase|
+:simpan bukti transaksi;
+
+|aplikasi|
+:tampilkan hasil sukses/gagal;
+stop
+
+@enduml

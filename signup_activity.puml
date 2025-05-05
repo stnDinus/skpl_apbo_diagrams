@@ -1,0 +1,21 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol "Registrasi" pada halaman awal;
+:isi email, password dan konfirmasi password;
+:pilih tombol "Registrasi";
+
+|aplikasi|
+:kirim data registrasi ke firebase;
+
+|firebase|
+:proses data registrasi;
+:kirim hasil registrasi (gagal/sukses) ke aplikasi;
+
+|aplikasi|
+:tampilkan hasil registrasi;
+:kembali ke halaman utama jika berhasil;
+stop
+
+@enduml

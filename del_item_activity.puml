@@ -1,0 +1,25 @@
+@startuml
+
+|admin|
+start
+:pilih tombol "edit" pada halaman sebuah barang;
+
+|aplikasi|
+:alihkan ke halaman "edit" barang;
+
+|admin|
+:pilih tombol "Hapus Barang";
+
+|aplikasi|
+:kirim nomor identifikasi barang ke server;
+:tunggu respon dari server;
+
+|server|
+:hapus barang dari database;
+:kirim repon sukses/gagal ke aplikasi;
+
+|aplikasi|
+:jika berhasil, alihkan ke halaman "dashboard", jika tidak, tampilkan kegagalan;
+stop
+
+@enduml

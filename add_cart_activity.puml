@@ -1,0 +1,12 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol "Tambah" pada halaman "dashboard";
+
+|aplikasi|
+:tambah barang ke keranjang;
+:tampilkan total harga keranjang;
+stop
+
+@enduml

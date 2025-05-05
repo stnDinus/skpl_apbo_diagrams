@@ -1,0 +1,12 @@
+@startuml
+
+|pengguna|
+start
+:pilih tombol hapus pada halaman keranjang;
+
+|aplikasi|
+:hapus barang dari keranjang;
+:perbarui total harga keranjang;
+stop
+
+@enduml
