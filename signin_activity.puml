@@ -1,6 +1,6 @@
 @startuml
 
-|pembeli|
+|pengguna|
 start
 :pilih tombol "Masuk" pada halaman awal;
 :isi email dan password;
