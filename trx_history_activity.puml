@@ -1,6 +1,6 @@
 @startuml
 
-|pembeli|
+|pengguna|
 start
 :pilih tombol "Riwayat" pada halaman "dashboard";
 
