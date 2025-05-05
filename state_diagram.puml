@@ -1,0 +1,39 @@
+@startuml
+state "Registrasi" as signup: Buat akun baru menggunakan email dan password
+state "Masuk" as signin: Masuk dengan akun yang telah dibuat
+state "Keluar" as signout: Keluar dari akun aktif
+
+state Pembeli {
+  state "Tambah barang ke keranjang" as add_cart: Inkremen atau setel kuantitas sebuah barang di keranjang ke 1
+  state "Hapus barang dari keranjang" as del_cart: Setel kuantitas barang di keranjang ke 0
+  state "Lakukan transaksi" as trx: Buat transaksi untuk pembelian barang-barang di keranjang
+  state "Lihat riwayat transaksi" as trx_history: Periksa riwayat pembelian pribadi
+  state "Unggah bukti transaksi" as up_trx_receipt: Upload gambar transaksi jika barang belum diterima
+}
+
+state Admin {
+  state "Cetak riwayat transaksi ke pdf" as pdf_trx_history: Simpan riwayat semua transaksi (tidak terbatas akun) sebagai pdf
+  state "Tambah barang ke estalase" as crt_item: Buat barang baru
+  state "Perbarui barang di estalase" as upd_item: Perbarui data barang yang telah terbuat
+  state "Hapus barang dari estalase" as del_item: Hapus barang yang telah terbuat
+}
+
+[*] --> signup
+signup --> signin
+signin --> add_cart
+signin --> pdf_trx_history
+signin --> crt_item
+signout --> [*]
+
+add_cart --> del_cart
+del_cart --> trx
+trx --> trx_history
+trx_history --> up_trx_receipt
+up_trx_receipt --> signout
+
+pdf_trx_history --> signout
+
+crt_item --> upd_item
+upd_item --> del_item
+del_item --> signout
+@enduml
