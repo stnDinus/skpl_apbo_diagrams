@@ -1,0 +1,41 @@
+@startuml
+entity Item {
+  + int Id
+  + int Price
+  + String Name
+  + String Description
+  + String DetailedDescription
+  + String ImgUrl
+  + int Weight
+}
+
+entity City {
+  + String cityId
+  + String provinceId
+  + String type
+  + String cityName
+  + String postalCode
+}
+
+entity Cost {
+  + int value
+  + String etd
+  + String note
+}
+
+entity Service {
+  + String name
+  + String description
+  + List<Cost> costs;
+}
+
+entity ShippingInfo {
+  + String courierName
+  + City destCity;
+  + Service service;
+}
+
+City --o ShippingInfo
+Service --o ShippingInfo
+Cost --o Service
+@enduml
