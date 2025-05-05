@@ -13,7 +13,9 @@ actor Admin as root
 (Cetak riwayat transaksi ke pdf) as pdf_trx_history
 (Tambah barang ke keranjang) as add_cart
 (Hapus barang dari keranjang) as del_cart
-(Kelola estalase) as stock
+(Tambah barang ke estalase) as crt_item
+(Hapus barang dari estalase) as del_item
+(Perbarui barang di estalase) as upd_item
 
 usr -- signin
 usr -- signup
@@ -29,6 +31,8 @@ signin <.. signout: <<extend>>
 
 trx <.. up_trx_receipt: <<extend>>
 
-signin <.. stock: <<extend>>
+signin <.. crt_item: <<extend>>
+signin <.. del_item: <<extend>>
+signin <.. upd_item: <<extend>>
 
 @enduml
