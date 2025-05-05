@@ -1,6 +1,6 @@
 @startuml
 
-|pengguna|
+|pembeli|
 start
 :pilih tombol "Checkout" pada halaman keranjang;
 :isi tujuan dan pilihan kurir;

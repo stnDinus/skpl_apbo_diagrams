@@ -1,6 +1,6 @@
 @startuml
 
-|pengguna|
+|pembeli|
 start
 :pilih tombol akun pada halaman "dashboard";
 :pilih tombol "Keluar";

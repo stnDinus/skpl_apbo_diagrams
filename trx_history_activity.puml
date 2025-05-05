@@ -1,12 +1,12 @@
 @startuml
 
-|pengguna|
+|pembeli|
 start
 :pilih tombol "Riwayat" pada halaman "dashboard";
 
 |aplikasi|
 :alih ke halaman riwayat;
-:ambil data riwayat transaksi pengguna dari firebase;
+:ambil data riwayat transaksi pembeli dari firebase;
 
 |firebase|
 :kirim data riwayat ke aplikasi;
