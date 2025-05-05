@@ -1,6 +1,6 @@
 @startuml
 
-|pembeli|
+|pengguna|
 start
 :pilih tombol "Registrasi" pada halaman awal;
 :isi email, password dan konfirmasi password;

@@ -1,0 +1,8 @@
+@startuml
+actor Pengguna
+control SupportWidget
+boundary Firebase
+
+Pengguna -> SupportWidget: unggah bukti transaksi
+SupportWidget -> Firebase: simpan bukti
+@enduml

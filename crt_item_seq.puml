@@ -1,0 +1,14 @@
+@startuml
+actor Admin
+control DashboardPage
+control ItemPage
+boundary Server
+
+Admin -> DashboardPage: pilih tombol "Tambah"
+DashboardPage -> ItemPage: alih
+Admin -> ItemPage: isi data barang
+Admin -> ItemPage: pilih tombol "Simpan"
+ItemPage -> Server: kirim data barang
+Server -> ItemPage: kirim hasil gagal/sukses
+ItemPage -> DashboardPage: alih
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+actor Pengguna
+control LoginPage
+control DashboardPage
+boundary Firebase
+
+Pengguna -> LoginPage: isi data akun
+LoginPage -> Firebase:  kirim data akun
+Firebase -> LoginPage: kirim hasil sukses/gagal
+LoginPage -> DashboardPage: alih
+@enduml

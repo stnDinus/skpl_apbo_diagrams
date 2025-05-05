@@ -1,0 +1,11 @@
+@startuml
+actor Pengguna
+control RegistrationPage
+control DashboardPage
+boundary Firebase
+
+Pengguna -> RegistrationPage: isi data registrasi
+RegistrationPage -> Firebase: kirim data registrasi
+Firebase -> RegistrationPage: kirim hasil sukses/gagal
+RegistrationPage -> DashboardPage: alih
+@enduml

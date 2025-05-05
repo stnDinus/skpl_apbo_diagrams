@@ -1,0 +1,12 @@
+@startuml
+actor Admin
+control DashboardPage
+control TransactionWidget
+boundary AndroidFilesystem
+
+Admin -> DashboardPage: pilih tombol "Transaksi"
+DashboardPage -> TransactionWidget: alih
+Admin -> TransactionWidget: pilih tombol "pdf"
+TransactionWidget -> AndroidFilesystem: simpan pdf
+
+@enduml

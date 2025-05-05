@@ -1,0 +1,11 @@
+@startuml
+actor Pengguna
+control DashboardPage
+control HistoryWidget
+boundary Firebase
+
+Pengguna -> DashboardPage: pilih tombol riwayat
+DashboardPage -> HistoryWidget: alih
+HistoryWidget -> Firebase: ambil riwayat transaksi pengguna
+Firebase -> HistoryWidget: kirim riwayat transaksi pengguna
+@enduml

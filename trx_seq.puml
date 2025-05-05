@@ -1,0 +1,14 @@
+@startuml
+actor Pengguna
+control CartPage
+control CheckoutPage
+control ReceiptPage
+boundary Firebase
+
+Pengguna -> CartPage: checkout
+CartPage -> CheckoutPage: alih
+Pengguna -> CheckoutPage: isi tujuan dan kurir
+Pengguna -> CheckoutPage: bayar
+CheckoutPage -> Firebase: kirim data transaksi
+CheckoutPage -> ReceiptPage: alih
+@enduml

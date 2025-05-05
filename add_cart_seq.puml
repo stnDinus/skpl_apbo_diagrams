@@ -1,0 +1,6 @@
+@startuml
+actor Pengguna
+control HomeWidget
+
+Pengguna -> HomeWidget: tambah barang
+@enduml

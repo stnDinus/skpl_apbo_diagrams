@@ -1,0 +1,12 @@
+@startuml
+actor Admin
+control ItemPage
+control DashboardPage
+boundary Server
+
+Admin -> ItemPage: pilih tombol "edit"
+Admin -> ItemPage: pilih tombol "Hapus Barang"
+ItemPage -> Server: kirim permintaan hapus barang
+Server -> ItemPage: kirim hasil sukses/gagal
+ItemPage -> DashboardPage: alih
+@enduml
