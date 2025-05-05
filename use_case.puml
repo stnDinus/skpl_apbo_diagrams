@@ -22,14 +22,15 @@ usr -- signup
 
 root -- signin
 
-signin <.. trx: <<extend>>
 signin <.. trx_history: <<extend>>
 signin <.. pdf_trx_history: <<extend>>
 signin <.. add_cart: <<extend>>
 signin <.. del_cart: <<extend>>
 signin <.. signout: <<extend>>
 
-trx <.. up_trx_receipt: <<extend>>
+add_cart <. trx: <<extend>>
+
+trx <. up_trx_receipt: <<extend>>
 
 signin <.. crt_item: <<extend>>
 signin <.. del_item: <<extend>>
