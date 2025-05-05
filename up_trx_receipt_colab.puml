@@ -1,0 +1,9 @@
+@startuml
+control SupportWidget
+boundary FirebaseStorage
+control Reference
+
+(SupportWidget) -> (FirebaseStorage): FirebaseStorage.instance
+(FirebaseStorage) --> (Reference): ref()
+(Reference) --> (Reference): child("paymentConfirmations/${uid}/${timestamp}${fileExtension}")
+@enduml

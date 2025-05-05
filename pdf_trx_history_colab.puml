@@ -1,0 +1,10 @@
+@startuml
+control TransactionWidget
+control Permission
+entity PermissionStatus
+entity File
+
+(TransactionWidget) -> (Permission): Permission.manageExternalStorage
+(Permission) -> (PermissionStatus): request()
+(TransactionWidget) --> (File): File("/storage/emulated/0/Download/$filename.pdf")
+@enduml

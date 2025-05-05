@@ -1,0 +1,11 @@
+@startuml
+control CheckoutPage
+boundary FirebaseFirestore
+entity CollectionReference
+entity DocumentReference
+
+(CheckoutPage) -> (FirebaseFirestore): FirebaseFirestore.instance
+(FirebaseFirestore) -> (CollectionReference): collection("transactions")
+(CollectionReference) -> (DocumentReference): doc()
+
+@enduml

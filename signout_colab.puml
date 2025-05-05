@@ -1,0 +1,7 @@
+@startuml
+control ProfilePage
+boundary FirebaseAuth
+
+(ProfilePage) -> (FirebaseAuth): FirebaseAuth.instance
+
+@enduml

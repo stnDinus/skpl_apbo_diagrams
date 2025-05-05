@@ -1,0 +1,8 @@
+@startuml
+control ManageWidget
+control CRUDItem
+boundary Server
+
+(ManageWidget) -> (CRUDItem): CRUDItem(create: true)
+(CRUDItem) -> (Server): create()
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+control ItemPage
+control EditItemPage
+control CRUDItem
+boundary Server
+
+(ItemPage) -> (EditItemPage): EditItemPage(item: item)
+(EditItemPage) -> (CRUDItem): CRUDItem(item: item, create: false)
+(CRUDItem) -> (Server): delete()
+@enduml
