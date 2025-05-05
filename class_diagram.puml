@@ -1,0 +1,117 @@
+@startuml
+left to right direction
+
+' Entities start {
+
+entity Item {
+  + int Id
+  + int Price
+  + String Name
+  + String Description
+  + String DetailedDescription
+  + String ImgUrl
+  + int Weight
+}
+
+entity City {
+  + String cityId
+  + String provinceId
+  + String type
+  + String cityName
+  + String postalCode
+
+  + Map<String, dynamic> toMap()
+}
+
+entity Cost {
+  + int value
+  + String etd
+  + String note
+
+  + Map<String, dynamic> toMap()
+}
+
+entity Service {
+  + String name
+  + String description
+  + List<Cost> costs;
+}
+
+entity ShippingInfo {
+  + String courierName
+  + City destCity;
+  + Service service;
+}
+
+City --o ShippingInfo
+Service --o ShippingInfo
+Cost --o Service
+
+' Entities end }
+
+abstract StatefulWidget {
+  + StatefulElement createElement()
+  + State<StatefulWidget> createState()
+}
+
+class CRUDItem {
+  + Item? item
+  + bool create
+}
+StatefulWidget <|-- CRUDItem
+
+class HomeWidget {
+  + bool isAdmin
+}
+StatefulWidget <|-- HomeWidget
+
+class CheckoutPage {
+  + Map<Item, int> cart
+}
+StatefulWidget <|-- CheckoutPage
+
+class ReceiptPage {
+  + ShippingInfo shippingInfo
+  + Map<Item, int> cart
+  + String transactionId
+}
+StatefulWidget <|-- ReceiptPage
+
+StatefulWidget <|-up- LoginPage
+StatefulWidget <|-up- ProfilePage
+StatefulWidget <|-up- RegistrationPage
+StatefulWidget <|-up- HistoryWidget
+StatefulWidget <|-up- SupportWidget
+StatefulWidget <|-up- ManageWidget
+StatefulWidget <|-up- DashboardPage
+
+abstract StatelessWidget {
+  + Widget build(BuildContext context)
+  + StatelessElement createElement()
+}
+
+class CartPage {
+  + Map<Item, int> cart
+  + void Function(Item) delParentItem
+}
+StatelessWidget <|-- CartPage
+
+class ItemPage {
+  + Item item
+  + bool isAdmin
+}
+StatelessWidget <|-- ItemPage
+
+class EditItemPage {
+  + Item item
+}
+StatelessWidget <|-- EditItemPage
+
+StatelessWidget <|-up- TransactionWidget
+
+Item --o CRUDItem
+Item --o CartPage
+Item --o CheckoutPage
+Item --o ReceiptPage
+ShippingInfo -upo ReceiptPage
+@enduml
