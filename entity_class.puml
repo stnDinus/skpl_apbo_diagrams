@@ -15,12 +15,16 @@ entity City {
   + String type
   + String cityName
   + String postalCode
+
+  + Map<String, dynamic> toMap()
 }
 
 entity Cost {
   + int value
   + String etd
   + String note
+
+  + Map<String, dynamic> toMap()
 }
 
 entity Service {
