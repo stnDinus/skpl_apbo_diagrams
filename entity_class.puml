@@ -39,7 +39,15 @@ entity ShippingInfo {
   + Service service;
 }
 
+entity Transaction {
+  + String id
+  + String userId
+  + DateTime date
+  + ShippingInfo shippingInfo
+}
+
 City --o ShippingInfo
 Service --o ShippingInfo
+ShippingInfo --o Transaction
 Cost --o Service
 @enduml
