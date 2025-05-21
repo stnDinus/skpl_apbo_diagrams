@@ -1,6 +1,6 @@
 @startuml
-control RegistrationPage
-boundary FirebaseAuth
+boundary RegistrationPage
+control FirebaseAuth
 
 (RegistrationPage) -> (FirebaseAuth): FirebaseAuth.instance
 

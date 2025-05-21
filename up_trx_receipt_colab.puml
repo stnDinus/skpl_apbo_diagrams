@@ -1,8 +1,10 @@
 @startuml
+boundary DashboardPage
 control SupportWidget
-boundary FirebaseStorage
-control Reference
+control FirebaseStorage
+entity Reference
 
+(DashboardPage) -> (SupportWidget): SupportWidget()
 (SupportWidget) -> (FirebaseStorage): FirebaseStorage.instance
 (FirebaseStorage) --> (Reference): ref()
 (Reference) --> (Reference): child("paymentConfirmations/${uid}/${timestamp}${fileExtension}")

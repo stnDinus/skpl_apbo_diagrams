@@ -1,6 +1,6 @@
 @startuml
-control CheckoutPage
-boundary FirebaseFirestore
+boundary CheckoutPage
+control FirebaseFirestore
 entity CollectionReference
 entity DocumentReference
 

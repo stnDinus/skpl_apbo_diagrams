@@ -1,11 +1,13 @@
 @startuml
+boundary DashboardPage
 control HistoryWidget
-boundary FirebaseFirestore
+control FirebaseFirestore
 entity CollectionReference
 control Query
 entity QuerySnapshot
 entity DocumentReference
 
+(DashboardPage) -> (HistoryWidget): HistoryWidget()
 (HistoryWidget) -> (FirebaseFirestore): FirebaseFirestore.instance
 (FirebaseFirestore) -> (CollectionReference): collection("transactions")
 (CollectionReference) --> (Query): where("userId", isEqualTo: FirebaseAuth.instance.currentUser!.uid)

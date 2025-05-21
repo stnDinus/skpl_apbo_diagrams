@@ -1,7 +1,7 @@
 @startuml
-control ManageWidget
+boundary ManageWidget
 control CRUDItem
-boundary Server
+entity Server
 
 (ManageWidget) -> (CRUDItem): CRUDItem(create: true)
 (CRUDItem) -> (Server): create()

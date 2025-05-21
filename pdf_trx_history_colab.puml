@@ -1,9 +1,11 @@
 @startuml
+boundary DashboardPage
 control TransactionWidget
 control Permission
 entity PermissionStatus
 entity File
 
+(DashboardPage) -> (TransactionWidget): TransactionWidget()
 (TransactionWidget) -> (Permission): Permission.manageExternalStorage
 (Permission) -> (PermissionStatus): request()
 (TransactionWidget) --> (File): File("/storage/emulated/0/Download/$filename.pdf")

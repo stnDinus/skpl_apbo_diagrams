@@ -1,8 +1,8 @@
 @startuml
-control ItemPage
-control EditItemPage
+boundary ItemPage
+boundary EditItemPage
 control CRUDItem
-boundary Server
+entity Server
 
 (ItemPage) -> (EditItemPage): EditItemPage(item: item)
 (EditItemPage) -> (CRUDItem): CRUDItem(item: item, create: false)
