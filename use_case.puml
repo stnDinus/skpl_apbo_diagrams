@@ -4,6 +4,7 @@ left to right direction
 actor Pembeli as usr
 actor Admin as root
 
+rectangle System {
 (Masuk) as signin
 (Registrasi) as signup
 (Keluar) as signout
@@ -16,6 +17,7 @@ actor Admin as root
 (Tambah barang ke estalase) as crt_item
 (Hapus barang dari estalase) as del_item
 (Perbarui barang di estalase) as upd_item
+}
 
 usr -- signin
 usr -- signup
