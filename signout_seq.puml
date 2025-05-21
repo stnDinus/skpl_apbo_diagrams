@@ -1,11 +1,14 @@
 @startuml
 actor Pengguna
-control ProfilePage
-control LandingPage
-boundary Firebase
+boundary ProfilePage
+boundary LandingPage
+control FirebaseAPI
+entity FirebaseAuthentication
 
 Pengguna -> ProfilePage: keluar
-ProfilePage -> Firebase: kirim permintaan keluar
-Firebase -> ProfilePage: kirim hasil sukses/gagal
+ProfilePage -> FirebaseAPI: kirim permintaan keluar
+FirebaseAPI -> FirebaseAuthentication: forward data
+FirebaseAPI <- FirebaseAuthentication: reply sukses/gagal
+FirebaseAPI -> ProfilePage: kirim hasil sukses/gagal
 ProfilePage -> LandingPage: alih
 @enduml

@@ -1,14 +1,16 @@
 @startuml
 actor Pengguna
-control CartPage
-control CheckoutPage
-control ReceiptPage
-boundary Firebase
+boundary CartPage
+boundary CheckoutPage
+boundary ReceiptPage
+control FirebaseAPI
+entity FirebaseFirestore
 
 Pengguna -> CartPage: checkout
 CartPage -> CheckoutPage: alih
 Pengguna -> CheckoutPage: isi tujuan dan kurir
 Pengguna -> CheckoutPage: bayar
-CheckoutPage -> Firebase: kirim data transaksi
+CheckoutPage -> FirebaseAPI: kirim data transaksi
+FirebaseAPI -> FirebaseFirestore: forward data
 CheckoutPage -> ReceiptPage: alih
 @enduml

@@ -1,8 +1,10 @@
 @startuml
 actor Pengguna
-control SupportWidget
-boundary Firebase
+boundary SupportWidget
+control FirebaseAPI
+entity FirebaseStorage
 
 Pengguna -> SupportWidget: unggah bukti transaksi
-SupportWidget -> Firebase: simpan bukti
+SupportWidget -> FirebaseAPI: proses dan format bukti transaksi
+FirebaseAPI -> FirebaseStorage: forward data bukti transaksi
 @enduml

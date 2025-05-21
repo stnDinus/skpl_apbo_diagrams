@@ -1,11 +1,14 @@
 @startuml
 actor Pengguna
-control LoginPage
-control DashboardPage
-boundary Firebase
+boundary LoginPage
+boundary DashboardPage
+control FirebaseAPI
+entity FirebaseAuthentication
 
 Pengguna -> LoginPage: isi data akun
-LoginPage -> Firebase:  kirim data akun
-Firebase -> LoginPage: kirim hasil sukses/gagal
+LoginPage -> FirebaseAPI:  kirim data akun
+FirebaseAPI -> FirebaseAuthentication: forward data
+FirebaseAPI <- FirebaseAuthentication: kirim hasil sukses/gagal
+FirebaseAPI -> LoginPage: forward hasil
 LoginPage -> DashboardPage: alih
 @enduml

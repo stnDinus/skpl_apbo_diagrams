@@ -1,11 +1,14 @@
 @startuml
 actor Pengguna
-control RegistrationPage
-control DashboardPage
-boundary Firebase
+boundary RegistrationPage
+boundary DashboardPage
+control FirebaseAPI
+entity FirebaseAuthentication
 
 Pengguna -> RegistrationPage: isi data registrasi
-RegistrationPage -> Firebase: kirim data registrasi
-Firebase -> RegistrationPage: kirim hasil sukses/gagal
+RegistrationPage -> FirebaseAPI: kirim data registrasi
+FirebaseAPI -> FirebaseAuthentication: forward data
+FirebaseAPI <- FirebaseAuthentication: kirim hasil sukses/gagal
+FirebaseAPI -> RegistrationPage: forward hasil
 RegistrationPage -> DashboardPage: alih
 @enduml

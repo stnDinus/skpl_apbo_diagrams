@@ -1,11 +1,14 @@
 @startuml
 actor Pengguna
-control DashboardPage
-control HistoryWidget
-boundary Firebase
+boundary DashboardPage
+boundary HistoryWidget
+control FirebaseAPI
+entity FirebaseFirestore
 
 Pengguna -> DashboardPage: pilih tombol riwayat
 DashboardPage -> HistoryWidget: alih
-HistoryWidget -> Firebase: ambil riwayat transaksi pengguna
-Firebase -> HistoryWidget: kirim riwayat transaksi pengguna
+HistoryWidget -> FirebaseAPI: ambil riwayat transaksi pengguna
+FirebaseAPI -> FirebaseFirestore: forward request
+FirebaseAPI <- FirebaseFirestore: kirim response
+FirebaseAPI -> HistoryWidget: kirim riwayat transaksi pengguna
 @enduml
