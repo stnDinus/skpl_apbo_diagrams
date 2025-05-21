@@ -5,37 +5,45 @@ actor Pembeli as usr
 actor Admin as root
 
 rectangle System {
-(Masuk) as signin
 (Registrasi) as signup
+(Masuk) as signin
+
+rectangle Authenticated {
 (Keluar) as signout
-(Lakukan transaksi) as trx
-(Unggah bukti transaksi) as up_trx_receipt
 (Lihat riwayat transaksi) as trx_history
-(Cetak riwayat transaksi ke pdf) as pdf_trx_history
+
 (Tambah barang ke keranjang) as add_cart
 (Hapus barang dari keranjang) as del_cart
+(Lakukan transaksi) as trx
+(Unggah bukti transaksi) as up_trx_receipt
+
+(Cetak riwayat transaksi ke pdf) as pdf_trx_history
 (Tambah barang ke estalase) as crt_item
 (Hapus barang dari estalase) as del_item
 (Perbarui barang di estalase) as upd_item
 }
+}
 
-usr -- signin
 usr -- signup
-
+usr -- signin
+root -- signup
 root -- signin
 
-signin <.. trx_history: <<extend>>
-signin <.. pdf_trx_history: <<extend>>
-signin <.. add_cart: <<extend>>
-signin <.. del_cart: <<extend>>
-signin <.. signout: <<extend>>
+signup .> signin: <<extend>>
+signin .> Authenticated: <<extend>>
 
-add_cart <. trx: <<extend>>
+usr -- trx_history
+usr -- add_cart
+usr -- del_cart
+usr -- signout
 
-trx <. up_trx_receipt: <<extend>>
+add_cart .> trx: <<extend>>
+add_cart .> del_cart: <<extend>>
+trx .> up_trx_receipt: <<extend>>
 
-signin <.. crt_item: <<extend>>
-signin <.. del_item: <<extend>>
-signin <.. upd_item: <<extend>>
+pdf_trx_history -- root
+crt_item -- root
+del_item -- root
+upd_item -- root
 
 @enduml
