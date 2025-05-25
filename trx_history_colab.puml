@@ -7,12 +7,12 @@ control Query
 entity QuerySnapshot
 entity DocumentReference
 
-(DashboardPage) -> (HistoryWidget): HistoryWidget()
-(HistoryWidget) -> (FirebaseFirestore): FirebaseFirestore.instance
-(FirebaseFirestore) -> (CollectionReference): collection("transactions")
+(DashboardPage) --> (HistoryWidget): HistoryWidget()
+(HistoryWidget) --> (FirebaseFirestore): FirebaseFirestore.instance
+(FirebaseFirestore) --> (CollectionReference): collection("transactions")
 (CollectionReference) --> (Query): where("userId", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
 (Query) --> (Query): .where("date", ...dateRange).orderBy("date", descending: true)
 (QuerySnapshot) <- (Query): get()
-(DocumentReference) <- (QuerySnapshot): docs
+(QuerySnapshot) -u-> (DocumentReference): docs
 
 @enduml

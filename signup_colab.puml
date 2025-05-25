@@ -1,7 +1,9 @@
 @startuml
 boundary RegistrationPage
+control DashboardPage
 control FirebaseAuth
 
-(RegistrationPage) -> (FirebaseAuth): FirebaseAuth.instance
+(RegistrationPage) -> (FirebaseAuth): createUserWithEmailAndPassword(email, password)
+(RegistrationPage) --> (DashboardPage): pushNamedAndRemoveUntil(context, "dashboard", (route) => false)
 
 @enduml

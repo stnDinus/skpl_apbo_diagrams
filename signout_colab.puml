@@ -1,7 +1,9 @@
 @startuml
 boundary ProfilePage
-control FirebaseAuth
+boundary LandingPage
+control FirebaseAuth.instance
 
-(ProfilePage) -> (FirebaseAuth): FirebaseAuth.instance
+(ProfilePage) -> (FirebaseAuth.instance): signOut()
+(ProfilePage) --> (LandingPage): Navigator.pushNamedAndRemoveUntil(context, "landing", (route) => false)
 
 @enduml

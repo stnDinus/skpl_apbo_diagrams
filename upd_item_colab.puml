@@ -1,10 +1,14 @@
 @startuml
 boundary ItemPage
 boundary EditItemPage
+boundary DashboardPage
 control CRUDItem
-entity Server
+control Server
+entity Database
 
-(ItemPage) -> (EditItemPage): EditItemPage(item: item)
-(EditItemPage) -> (CRUDItem): CRUDItem(item: item, create: false)
-(CRUDItem) -> (Server): update()
+(ItemPage) --> (EditItemPage): EditItemPage(item: item)
+(EditItemPage) --> (CRUDItem): CRUDItem(item: item, create: false)
+(CRUDItem) --> (Server): update()
+(Server) --> (Database): UPDATE items SET name=?, description=?, detailed_description=?, img_url=?, price=?, weight=? WHERE id=?
+(CRUDItem) -> (DashboardPage): Navigator.pushNamedAndRemoveUntil(context, "dashboard", (route) => false)
 @enduml

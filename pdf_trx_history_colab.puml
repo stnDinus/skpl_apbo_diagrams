@@ -5,8 +5,8 @@ control Permission
 entity PermissionStatus
 entity File
 
-(DashboardPage) -> (TransactionWidget): TransactionWidget()
+(DashboardPage) --> (TransactionWidget): TransactionWidget()
 (TransactionWidget) -> (Permission): Permission.manageExternalStorage
-(Permission) -> (PermissionStatus): request()
+(Permission) -u-> (PermissionStatus): request()
 (TransactionWidget) --> (File): File("/storage/emulated/0/Download/$filename.pdf")
 @enduml

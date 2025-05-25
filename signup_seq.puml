@@ -2,13 +2,9 @@
 actor Pengguna
 boundary RegistrationPage
 boundary DashboardPage
-control FirebaseAPI
-entity FirebaseAuthentication
+control FirebaseAuth
 
 Pengguna -> RegistrationPage: isi data registrasi
-RegistrationPage -> FirebaseAPI: kirim data registrasi
-FirebaseAPI -> FirebaseAuthentication: forward data
-FirebaseAPI <- FirebaseAuthentication: kirim hasil sukses/gagal
-FirebaseAPI -> RegistrationPage: forward hasil
+RegistrationPage -> FirebaseAuth: proses data registrasi
 RegistrationPage -> DashboardPage: alih
 @enduml

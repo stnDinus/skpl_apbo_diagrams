@@ -1,6 +1,8 @@
 @startuml
 boundary LoginPage
 control FirebaseAuth
+boundary DashboardPage
 
-(LoginPage) -> (FirebaseAuth): FirebaseAuth.instance
+(LoginPage) -> (FirebaseAuth): signInWithEmailAndPassword(email, password)
+(LoginPage) --> (DashboardPage): Navigator.pushnamedAndRemoveUntil(context, "dashboard", (route) => false)
 @enduml

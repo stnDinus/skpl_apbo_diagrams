@@ -1,10 +1,8 @@
 @startuml
 actor Pengguna
-boundary DashboardPage
 control HomeWidget
-entity Cart
+entity "Map<Item, int>" as cart
 
-Pengguna -> DashboardPage: tambah barang
-DashboardPage -> HomeWidget
-HomeWidget -> Cart
+Pengguna -> HomeWidget: tambah barang
+HomeWidget -> cart: simpan barang
 @enduml

@@ -1,8 +1,13 @@
 @startuml
-boundary ManageWidget
+boundary DashboardPage
+control ManageWidget
 control CRUDItem
-entity Server
+control Server
+entity Database
 
-(ManageWidget) -> (CRUDItem): CRUDItem(create: true)
-(CRUDItem) -> (Server): create()
+(DashboardPage) -l-> (ManageWidget): ManageWidget()
+(ManageWidget) ---> (CRUDItem): CRUDItem(create: true)
+(CRUDItem) --> (Server): create()
+(Server) --> (Database): INSERT INTO items(name, description, detailed_description, img_url, price, weight) VALUES(?, ?, ?, ?, ?, ?)
+(CRUDItem) -> (DashboardPage): Navigator.pushNamedAndRemoveUntil(context, "dashboard", (route) => false)
 @enduml

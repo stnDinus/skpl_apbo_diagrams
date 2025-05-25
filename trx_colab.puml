@@ -1,11 +1,14 @@
 @startuml
-boundary CheckoutPage
+boundary CartPage
+control CheckoutPage
 control FirebaseFirestore
-entity CollectionReference
+control CollectionReference
 entity DocumentReference
 
+(CartPage) --> (CheckoutPage): Navigator.push(context, MaterialPageRoute(builder: (context) => CheckoutPage(cart)))
 (CheckoutPage) -> (FirebaseFirestore): FirebaseFirestore.instance
-(FirebaseFirestore) -> (CollectionReference): collection("transactions")
-(CollectionReference) -> (DocumentReference): doc()
+(FirebaseFirestore) --> (CollectionReference): collection("transactions")
+(CollectionReference) --> (DocumentReference): doc()
+(CheckoutPage) ---> (DocumentReference): set({...trxData})
 
 @enduml

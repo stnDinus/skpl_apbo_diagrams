@@ -1,6 +1,8 @@
 @startuml
 actor Pengguna
-control CartPage
+boundary CartPage
+entity Cart
 
 Pengguna -> CartPage: hapus barang
+CartPage -> Cart
 @enduml

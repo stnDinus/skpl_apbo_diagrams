@@ -2,13 +2,9 @@
 actor Pengguna
 boundary ProfilePage
 boundary LandingPage
-control FirebaseAPI
-entity FirebaseAuthentication
+control FirebaseAuth
 
 Pengguna -> ProfilePage: keluar
-ProfilePage -> FirebaseAPI: kirim permintaan keluar
-FirebaseAPI -> FirebaseAuthentication: forward data
-FirebaseAPI <- FirebaseAuthentication: reply sukses/gagal
-FirebaseAPI -> ProfilePage: kirim hasil sukses/gagal
+ProfilePage -> FirebaseAuth: kirim permintaan keluar
 ProfilePage -> LandingPage: alih
 @enduml

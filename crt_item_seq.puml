@@ -1,16 +1,20 @@
 @startuml
 actor Admin
 boundary DashboardPage
-boundary EditItemPage
+boundary ManageWidget
+control CRUDItem
 control Server
 entity Database
 
 Admin -> DashboardPage: pilih tombol "Tambah"
-DashboardPage -> EditItemPage: alih
-Admin -> EditItemPage: isi data barang
-Admin -> EditItemPage: pilih tombol "Simpan"
-EditItemPage -> Server: kirim data barang
+group alih
+DashboardPage -> ManageWidget
+ManageWidget -> CRUDItem
+end
+Admin -> CRUDItem: isi data barang
+Admin -> CRUDItem: pilih tombol "Simpan"
+CRUDItem -> Server: kirim data barang
 Server -> Database: tambah data
-Server -> EditItemPage: kirim hasil gagal/sukses
-EditItemPage -> DashboardPage: alih
+Server -> CRUDItem: kirim hasil gagal/sukses
+CRUDItem -> DashboardPage: alih
 @enduml
