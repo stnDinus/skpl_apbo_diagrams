@@ -1,0 +1,6 @@
+@startuml
+boundary CartPage
+entity "Map<Item, int>" as cart
+
+(CartPage) -> (cart): remove(item: item)
+@enduml

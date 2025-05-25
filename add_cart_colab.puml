@@ -1,0 +1,6 @@
+@startuml
+control HomeWidget
+entity "Map<Item, int>" as cart
+
+(HomeWidget) -> (cart): update(item, (value) => ++value, ifAbsent: () => 1)
+@enduml
